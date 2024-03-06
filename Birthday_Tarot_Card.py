@@ -32,21 +32,38 @@ World = Major_Arcana('XXI','The World','Completion, Integration, Accomplishment,
 
 print('Do you want to know more about yourself? Enter your birth date to get your Tarot Birth Card!')
 print("- What is a Tarot Birth Card?")
-print("A Tarot birth card has special relevance to you based on your date of birth. It reflects a central piece of your path and identifies the life lessons you need to learn.")
-print("Step one: Enter your birthday!(numbers only)")
-Year = int(input(" Year of Birth: "))
-Month = int(input(" Month of Birth: "))
-Date = int(input(" Date of Birth: "))
+print("A Tarot birth card has special relevance to you based on your date of birth. It is a combo of 2-3 major arcana tarot cards that reveal special insights and truths about who you really are and how you journey through life")
+print("Step one: Enter your birthday!(Eg: 1 March 2024 > 2024 03 01) ")
+Year = input(" Year of Birth: ")
+Month = input(" Month of Birth: ")
+Date = input(" Date of Birth: ")
 
-Sum = Year + Month + Date
+Sum = int(Year)+ int(Month) + int(Date)
 Str_Sum = str(Sum)
-Number = int(Str_Sum[0]) + int(Str_Sum[1]) + int(Str_Sum[2]) + int(Str_Sum[3])
-if Number >= len(List_Major_Arcana):
-    Str_Fin_Num = str(Number)
+
+First_Number = int(Str_Sum[0]) + int(Str_Sum[1]) + int(Str_Sum[2]) + int(Str_Sum[3])
+Second_Number = int(Year[0]) + int(Year[1]) + int(Year[2]) + int(Year[3]) + int(Month[0]) + int(Month[1]) + int(Date[0]) + int(Date[1])
+
+if Second_Number >= len(List_Major_Arcana):
+    Str_Second_number = str(Second_Number)
+    Sec_Num_List = [int(Str_Second_number[0]), int(Str_Second_number[1])]
+    Sec_Num_List.sort
+    Final_Number_2 = int(Sec_Num_List[0])*10 + int(Sec_Num_List[1])
+else:
+    print()
+
+
+if First_Number >= len(List_Major_Arcana):
+    Str_Fin_Num = str(First_Number)
     Final_Number = int(Str_Fin_Num[0]) + int(Str_Fin_Num[1])
     print(" Your Number is: ",Final_Number, "The coresponding Tarot Card is:",List_Major_Arcana[Final_Number],'.')
 else:
-    print("Your Number is: ",Number, "The corresponding Tarot card is: ",List_Major_Arcana[Number],'.')
+    print("Your Number is: ",First_Number, "The corresponding Tarot card is: ",List_Major_Arcana[First_Number],'.')
+
+
+
+
+
 
 print("Get more information on your card by entering the name of the Card")
 Info_Card= input("Your Birth Tarot Card: ")
