@@ -49,6 +49,10 @@ if First_Number >= len(List_Major_Arcana):
     Second_Number = int(Final_Number) + 9
     print(" Your Number is: ",Final_Number, ".The coresponding Tarot Card is:",List_Major_Arcana[Final_Number],'.')
     print('Your 2nd Number is:', Second_Number, ". The corresponding Tarot Card is:", List_Major_Arcana[Second_Number],'.')
+elif First_Number +9  >= len(List_Major_Arcana):
+        Sec2_Num = First_Number - 9
+        print("Your Number is: ",First_Number,"The corresponding Tarot card is: ",List_Major_Arcana[First_Number],'.')
+        print('Your 2nd Number is:', Sec2_Num, ". The corresponding Tarot Card is:", List_Major_Arcana[Sec2_Num],'.')
 else:
     Second_Number = First_Number + 9
     print("Your Number is: ",First_Number,"The corresponding Tarot card is: ",List_Major_Arcana[First_Number],'.')
